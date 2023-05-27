@@ -26,6 +26,22 @@ function submitdetails(event){
     // showuseronscreen (obj) 
  
 } 
+
+window.addEventListener("DOMContentLoaded", () => {
+    axios.get("https://crudcrud.com/api/bd835745bc2e45aa8b9e83640c08e212/appointmentData")
+    .then((response)=>{
+        console.log(response)
+
+        for(var i=0; i<response.data.length; i++){
+            showuseronscreen(response.data[i])
+        }
+    })
+    .catch((error) => {
+        console.log(error)
+    })
+} )
+
+
  
 function showuseronscreen (obj){ 
     const parentelem = document.getElementById("listofitems") 
