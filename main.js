@@ -42,6 +42,13 @@ window.addEventListener("DOMContentLoaded", () => {
 } )
 
 
+function editUserDetails(expenses,description,catalogue){
+    document.getElementById('expenses').value=expenses;
+    document.getElementById('description').value=description;
+    document.getElementById('catalogue').value=catalogue;
+}
+
+
 function deleteUser(userId){
     axios.delete(`https://crudcrud.com/api/bd835745bc2e45aa8b9e83640c08e212/appointmentData/${userId}`)
     .then((response) => {
